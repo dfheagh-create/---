@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>лол кек</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="logo">ТВОЮЖ<span>МАТЬ</span></div>
+      <div class="online-status">
+        <span class="status-dot"></span> брух...
+      </div>
+    </header>
+
+    <section id="homeScreen">
+      <section class="welcome">
+        <div class="emoji"></div>
+        <p class="subtitle"></p>
+        <h1>ЛОЛ<br><span>КЕК</span></h1>
+        <p class="description">
+          Собери кентов и страдай с ними хуйнёй!
+        </p>
+      </section>
+
+      <section class="menu">
+        <div class="input-group">
+          <label for="nickname">ТВОЯ КЛИКУХА</label>
+          <input id="nickname" type="text"
+            placeholder="Например, хуеплёт228" maxlength="20">
+        </div>
+
+        <div class="avatar-section">
+          <label>НАХМИ НА САМОЕ ПИЗДАТОЕ</label>
+          <div class="avatar-list">
+            <button class="avatar-option selected" data-avatar="ava1.png">
+              <img src="avatars/ava1.png" alt="Аватарка 1">
+            </button>
+            <button class="avatar-option" data-avatar="ava2.jpe">
+              <img src="avatars/ava2.jpe" alt="Аватарка 2">
+            </button>
+            <button class="avatar-option" data-avatar="ava3.jpe">
+              <img src="avatars/ava3.jpe" alt="Аватарка 3">
+            </button>
+            <button class="avatar-option" data-avatar="ava4.jpe">
+              <img src="avatars/ava4.jpe" alt="Аватарка 4">
+            </button>
+            <button class="avatar-option" data-avatar="ava5.png">
+              <img src="avatars/ava5.png" alt="Аватарка 5">
+            </button>
+          </div>
+        </div>
+
+        <button class="main-button" id="createRoom">
+          СОЗДАТЬ СВОЙ ХАМАМ <span>→</span>
+        </button>
+
+        <div class="separator"><span>ИЛИ</span></div>
+
+        <div class="join-group">
+          <input id="roomCode" type="text"
+            placeholder="ПОЙТИ В ХАМАМ КЕНТА" maxlength="6"
+            inputmode="numeric">
+          <button class="join-button" id="joinRoom">ВОЙТИ</button>
+        </div>
+
+        <p id="homeMessage" class="message"></p>
+      </section>
+    </section>
+
+    <section id="lobbyScreen" class="hidden">
+      <div class="lobby-heading">
+        <p class="subtitle">ТВОЙ ХАМАМ</p>
+        <h1>ЖДЁМ <span>КЕНТОВ</span></h1>
+      </div>
+
+      <div class="room-code-box">
+        <p>КОД ТВОЕГО ХАМАМА</p>
+        <div class="code-line">
+          <strong id="lobbyCode">000000</strong>
+          <button id="copyCode" class="copy-button">СПИЗДИТЬ</button>
+        </div>
+        <p class="hint">Отправь этот код кентам</p>
+      </div>
+
+      <div class="players-heading">
+        <h2>КЕНТЫ</h2>
+        <span id="playerCount">0/3</span>
+      </div>
+
+      <div id="playersList" class="players-list"></div>
+      <p id="lobbyMessage" class="message"></p>
+
+      <div class="waiting-note">
+        в игре должно быть 2-3 пидораса.
+      </div>
+
+      <button id="startGame" class="main-button hidden">
+        НАЧАТЬ ИГРУ →
+      </button>
+
+      <button id="leaveRoom" class="back-button">
+        ВЕРНУТЬСЯ НА ГЛАВНУЮ
+      </button>
+    </section>
+
+    <!-- ЭКРАН ИГРЫ -->
+    <section id="gameScreen" class="hidden">
+      <div class="game-heading">
+        <p class="subtitle" id="gameStatus">ПИЗДИ</p>
+        <h1>РАУНД <span id="roundNumber">1</span>/10</h1>
+      </div>
+
+      <div id="writingArea">
+        <p class="game-instruction">
+          спиздани такого, что бы у всех мать подохла?
+        </p>
+
+        <div class="meme-frame">
+          <img id="memeImage" src="" alt="люблю мемчики">
+        </div>
+
+        <label for="captionInput">ТВОЯ НИХУЯ НЕ СМЕШНАЯ ХУЙНЯ</label>
+        <textarea id="captionInput" maxlength="180"
+          placeholder="попизди мне тут"
+          rows="3"></textarea>
+
+        <button id="submitCaption" class="main-button">
+          СПИЗДАНУТЬ ХУЙНИ →
+        </button>
+      </div>
+
+      <div id="waitingAnswers" class="hidden">
+        <div class="waiting-icon">⌛</div>
+        <h2>ТВОЯ ХУЙНЯ ПРИНЯТА!</h2>
+        <p class="description">
+          Ждём, пока остальные игроки тоже напиздят хуйни.
+        </p>
+        <p id="answerCount" class="answer-count">Ответили: 1/3</p>
+      </div>
+
+      <div id="resultsArea" class="hidden">
+        <p class="game-instruction">
+          какую же хуетень вы написали
+        </p>
+        <div id="resultsList" class="results-list"></div>
+
+        <p id="resultsMessage" class="waiting-note"></p>
+
+        <button id="nextRound" class="main-button hidden">
+          СЛЕДУЮЩИЙ РАУНД →
+        </button>
+      </div>
+
+      <div id="finalArea" class="hidden">
+        <div class="emoji"></div>
+        <p class="subtitle">ну, типочки, вы и ебланы</p>
+        <h1>ЛОЛ,<br><span>победитель: рома</span></h1>
+        <p class="description">
+          мать ваша шлюха
+        </p>
+        <div class="meme-frame">
+          <img src="images/final.jpg" alt="Финальная картинка">
+          <button id="backToMenu">Вернуться в главное меню</button>
+        </div>
+        <p class="waiting-note">
+          я маря\детдомовска\псизбольная\марихуана и я угробила на эту игру 3 часа!!
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>вы все пидоры</div>
+      <span>•</span>
+      <div>я ебала твоего отца</div>
+      <span>•</span>
+      <div>твоя мать сдохнет</div>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>

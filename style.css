@@ -1,0 +1,503 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Russo+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #101a30;
+  color: #e8d8b9;
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  width: min(100% - 32px, 650px);
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.logo {
+  font-family: 'Russo One', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #d59a66;
+}
+
+.online-status {
+  font-size: 12px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #77c69a;
+  border-radius: 50%;
+}
+
+.welcome,
+.lobby-heading,
+.game-heading {
+  text-align: center;
+}
+
+.emoji {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #d59a66;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: clamp(32px, 7vw, 48px);
+  line-height: 1.2;
+  margin: 18px 0;
+}
+
+h1 span {
+  color: #d59a66;
+}
+
+.description {
+  color: #b9b6b0;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto 32px;
+}
+
+.menu {
+  background: #192741;
+  border: 1px solid #34415a;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.input-group,
+.avatar-section {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+  background: #101a30;
+  border: 1px solid #43506a;
+  border-radius: 10px;
+  color: #fff1d9;
+  padding: 15px;
+  font: inherit;
+  outline: none;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #d59a66;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7f899b;
+}
+
+.avatar-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.avatar-option {
+  width: 66px;
+  height: 66px;
+  border: 2px solid #43506a;
+  border-radius: 14px;
+  padding: 3px;
+  background: #101a30;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.avatar-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.avatar-option.selected {
+  border: 3px solid #d59a66;
+  transform: translateY(-3px);
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.main-button {
+  width: 100%;
+  background: #d59a66;
+  color: #172139;
+  border: none;
+  padding: 17px;
+  border-radius: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+
+.main-button span {
+  float: right;
+  font-size: 20px;
+}
+
+.main-button:hover,
+.join-button:hover {
+  filter: brightness(1.1);
+}
+
+.separator {
+  text-align: center;
+  color: #7f899b;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 22px 0;
+}
+
+.join-group {
+  display: flex;
+  gap: 10px;
+}
+
+.join-button {
+  border: none;
+  border-radius: 10px;
+  background: #e8d8b9;
+  color: #172139;
+  padding: 0 22px;
+}
+
+.message {
+  min-height: 22px;
+  color: #e9aa78;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.room-code-box {
+  background: #192741;
+  border: 1px solid #43506a;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.room-code-box > p:first-child {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+.code-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.code-line strong {
+  font-family: 'Russo One', sans-serif;
+  font-size: 42px;
+  letter-spacing: 5px;
+  color: #d59a66;
+}
+
+.copy-button {
+  background: #e8d8b9;
+  color: #172139;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.hint {
+  color: #a8afbd;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.players-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.players-heading h2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 20px;
+}
+
+.players-heading span {
+  color: #d59a66;
+  font-weight: 900;
+}
+
+.players-list {
+  display: grid;
+  gap: 12px;
+}
+
+.player-card {
+  background: #192741;
+  border: 1px solid #43506a;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.player-card img {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #101a30;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-name {
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.player-role {
+  color: #a8afbd;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.host-label {
+  color: #d59a66;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.empty-slot {
+  border: 1px dashed #53617a;
+  border-radius: 14px;
+  padding: 18px;
+  color: #8994a7;
+  text-align: center;
+}
+
+.waiting-note {
+  text-align: center;
+  color: #b9b6b0;
+  font-size: 13px;
+  margin: 22px 0;
+}
+
+.back-button {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #53617a;
+  border-radius: 10px;
+  background: transparent;
+  color: #e8d8b9;
+  margin-top: 18px;
+}
+
+.game-heading {
+  margin-bottom: 25px;
+}
+
+.game-instruction {
+  text-align: center;
+  color: #b9b6b0;
+  line-height: 1.6;
+  margin: 18px 0;
+}
+
+.meme-frame {
+  background: #192741;
+  border: 1px solid #43506a;
+  border-radius: 18px;
+  padding: 10px;
+  margin: 20px 0 26px;
+  text-align: center;
+}
+
+.meme-frame img {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#writingArea label {
+  margin-top: 20px;
+}
+
+#captionInput {
+  min-height: 100px;
+}
+
+.waiting-icon {
+  font-size: 54px;
+  text-align: center;
+  margin: 35px 0 15px;
+}
+
+#waitingAnswers {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#waitingAnswers h2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 23px;
+}
+
+.answer-count {
+  color: #d59a66;
+  font-size: 18px;
+  font-weight: 900;
+  margin-top: 25px;
+}
+
+.results-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.result-card {
+  background: #192741;
+  border: 1px solid #43506a;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.result-card img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #101a30;
+}
+
+.result-caption {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  margin: 15px 0 8px;
+}
+
+.result-author {
+  color: #d59a66;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+#finalArea {
+  text-align: center;
+}
+
+#finalArea .meme-frame {
+  margin-top: 25px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #8994a7;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 20px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .menu {
+    padding: 20px;
+  }
+
+  .avatar-list {
+    gap: 8px;
+  }
+
+  .avatar-option {
+    width: 54px;
+    height: 54px;
+  }
+
+  .code-line strong {
+    font-size: 34px;
+  }
+
+  .result-caption {
+    font-size: 16px;
+  }
+}
